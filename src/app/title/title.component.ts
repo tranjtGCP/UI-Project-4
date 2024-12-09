@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
+import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-title',
-  imports: [RouterLink, RouterOutlet, MatButtonModule],
+  imports: [RouterLink, MatButtonModule],
   templateUrl: './title.component.html',
   styleUrl: './title.component.scss',
 })

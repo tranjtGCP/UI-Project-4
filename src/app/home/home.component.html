@@ -1,1 +1,103 @@
-<h1>Beepus</h1>
+<div class="top">
+    <div class="toolbar">
+        <mat-toolbar>
+            <button mat-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h1>WorkForAll</h1>
+            <button mat-button class="user">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </mat-toolbar>
+    </div>
+    <div class="body">
+        <div class="left">
+            <mat-expansion-panel class="filters" expanded="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Filters</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Department</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">Sales</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">HR</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">IT</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">Inventory</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">Sanitation</mat-checkbox>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Position</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">Member</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">Manager</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">General Manager</mat-checkbox>
+                    <mat-checkbox class="filterCheckbox" labelPosition="before">Executive</mat-checkbox>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Qualifications</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-radio-button class="filterCheckbox" labelPosition="before">No experience</mat-radio-button>
+                    <mat-radio-button class="filterCheckbox" labelPosition="before">Less than 1 year</mat-radio-button>
+                    <mat-radio-button class="filterCheckbox" labelPosition="before">1 year</mat-radio-button>
+                    <mat-radio-button class="filterCheckbox" labelPosition="before">2 years</mat-radio-button>
+                    <mat-radio-button class="filterCheckbox" labelPosition="before">3+ years</mat-radio-button>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Location</mat-panel-title>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Hours</mat-panel-title>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Tenure</mat-panel-title>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+
+            </mat-expansion-panel>
+        </div>
+        <div class="right">
+            <div class="rightHeader">
+                <h2>Available Positions</h2>
+                <mat-form-field>
+                    <mat-label>Search listings</mat-label>
+                    <input matInput class="searchBar" type="text" placeholder="Search"  #filter>
+                    <button mat-button id="clearSearch" (click)="clearList()">
+                        <mat-icon matSuffix>cancel</mat-icon>
+                    </button>
+                </mat-form-field>
+                <button mat-fab (click)="filterList(filter.value)">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+            <div class="rightBody">
+                @for (job of listings; track job.title)
+                {
+                    <mat-card class="listingCard">
+                        <div class="matCardHeader">
+                            <h3>{{ job.title }}</h3>
+                            <mat-card-header>
+                                <img height="150" [src]='job.picture' >
+                            </mat-card-header>
+                        </div>
+                        <mat-card-content> 
+                            <div class="cardContent">
+                                <p><strong> Department: </strong>{{ job.department }}</p>
+                                <p><strong> Position: </strong>{{ job.position }}</p>
+                                <p><strong> Qualification: </strong>{{ job.qualification }}</p>
+                                <p><strong> Location: </strong>{{ job.location }}</p>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                }
+            </div>
+        </div>
+    </div>
+</div>
