@@ -1,15 +1,26 @@
 <div class="top">
-    <div class="toolbar">
-        <mat-toolbar>
-            <button mat-button>
-                <mat-icon>menu</mat-icon>
-            </button>
-            <h1>WorkForAll</h1>
-            <button mat-button class="user">
-                <mat-icon>account_circle</mat-icon>
-            </button>
-        </mat-toolbar>
-    </div>
+    <mat-drawer-container>
+        <mat-drawer #drawer>
+            <mat-selection-list class="sidenavList">
+                <mat-list-item><h1 routerLink="/Title">Home</h1></mat-list-item>
+                <mat-list-item><h1 routerLink="/About">About</h1></mat-list-item>
+            </mat-selection-list>
+        </mat-drawer>
+        <div class="toolbar">
+            <mat-toolbar>
+                <button mat-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <h1 class="toolbarTitle" routerLink="/Title">WorkForAll</h1>
+                <button mat-button class="user" [matMenuTriggerFor]="menu">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+            </mat-toolbar>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/Account">Account</button>
+                <button mat-menu-item>Settings</button>
+            </mat-menu>
+        </div>  
     <div class="body">
         <div class="left">
             <mat-expansion-panel class="filters" expanded="true">
@@ -66,12 +77,15 @@
         <div class="right">
             <div class="rightHeader">
                 <h2>Available Positions</h2>
-                <mat-form-field>
+                <mat-form-field class="searchBox">
                     <mat-label>Search listings</mat-label>
                     <input matInput class="searchBar" type="text" placeholder="Search"  #filter>
-                    <button mat-button id="clearSearch" (click)="clearList()">
-                        <mat-icon matSuffix>cancel</mat-icon>
-                    </button>
+                    @if (filter.value != "")
+                    {
+                        <button mat-button id="clearSearch" (click)="filter.value = ''">
+                            <mat-icon matSuffix>cancel</mat-icon>
+                        </button>
+                    }
                 </mat-form-field>
                 <button mat-fab (click)="filterList(filter.value)">
                     <mat-icon>search</mat-icon>
@@ -100,4 +114,5 @@
             </div>
         </div>
     </div>
+    </mat-drawer-container>
 </div>

@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatRadioButton, MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbar } from '@angular/material/toolbar';
+import { RouterLink, RouterModule } from '@angular/router';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
@@ -42,6 +43,8 @@ import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
     MatRadioModule,
     MatRadioButton,
     CommonModule,
+    RouterLink,
+    RouterModule
   ],
   providers: [ Ng2SearchPipeModule, Ng2SearchPipe ],
   templateUrl: './home.component.html',
@@ -64,7 +67,6 @@ export class HomeComponent {
   }
 
   clearList(): void{
-    
     this.listings = oListings;
   }
 }

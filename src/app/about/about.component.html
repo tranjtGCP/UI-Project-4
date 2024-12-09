@@ -1,0 +1,36 @@
+<div class="top">
+    <mat-drawer-container>
+        <mat-drawer #drawer>
+            <mat-selection-list class="sidenavList">
+                <mat-list-item><h1 routerLink="/Title">Home</h1></mat-list-item>
+                <mat-list-item><h1 routerLink="/Home">Search List</h1></mat-list-item>
+            </mat-selection-list>
+        </mat-drawer>
+    <div class="toolbar">
+            <mat-toolbar>
+                <button mat-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <h1 class="toolbarTitle" routerLink="/Title">WorkForAll</h1>
+                <button mat-button class="user" [matMenuTriggerFor]="menu"  >
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+            </mat-toolbar>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/Account">Account</button>
+                <button mat-menu-item>Settings</button>
+            </mat-menu>
+        </div>  
+        <div class="body">
+            <h1>About</h1>
+            <h3>This app is an early version of something that has the potential to help people find employment in even the harshest of times!</h3>
+            <h3>Usage:</h3>
+            <h3>- Users would have a profile that they would upload a resume / CV to</h3>
+            <h3>- Employers would list themselves on here indicating they are recruiting</h3>
+            <h3>- Unlike other job search apps, this would have a focus on allowing people that don't have very much experience, living, or assets to back themselves</h3>
+            <mat-divider></mat-divider>
+            <h3>WorkForAll is dedicated to helping everyone find their purpose, develop their goals, and improve themselves.</h3>
+            <h3></h3>
+        </div>
+    </mat-drawer-container>
+</div>

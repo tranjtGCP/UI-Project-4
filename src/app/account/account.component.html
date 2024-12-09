@@ -1,0 +1,42 @@
+<div class="top">
+    <mat-drawer-container>
+        <mat-drawer #drawer>
+            <mat-selection-list class="sidenavList">
+                <mat-list-item><h1 routerLink="/Title">Home</h1></mat-list-item>
+                <mat-list-item><h1 routerLink="/Home">Search List</h1></mat-list-item>
+                <mat-list-item><h1 routerLink="/About">About</h1></mat-list-item>
+            </mat-selection-list>
+        </mat-drawer>
+    <div class="toolbar">
+            <mat-toolbar>
+                <button mat-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <h1 class="toolbarTitle" routerLink="/Title">WorkForAll</h1>
+                <button mat-button class="user" [matMenuTriggerFor]="menu"  >
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+            </mat-toolbar>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/Account">Account</button>
+                <button mat-menu-item>Settings</button>
+            </mat-menu>
+        </div>  
+        <div class="body">
+            <h1>My Account</h1>
+            <h2><strong>Name: </strong> Justin Tran</h2>
+            <h2><strong>Date of Birth:</strong></h2>
+            <p>November 1, 2001</p>
+            <h2><strong>Preferences: </strong></h2>
+            <p>- Inventory management</p>
+            <p>- Programming</p>
+            <p>- Janitorial</p>
+            <h2><strong>Experience: </strong></h2>
+            <p>November 1, 2001</p>
+            <h2><strong>Messages: </strong></h2>
+                <mat-selection-list>
+                    <mat-list-item><mat-icon>mail</mat-icon>We would be interested in moving forward...</mat-list-item>
+                </mat-selection-list>
+        </div>
+    </mat-drawer-container>
+</div>
