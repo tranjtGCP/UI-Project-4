@@ -60,16 +60,35 @@
                     <mat-expansion-panel-header>
                         <mat-panel-title>Location</mat-panel-title>
                     </mat-expansion-panel-header>
+                    <div class="locationPanel">
+                        <mat-checkbox id="Location1" onclick="onChange($event)" [checked]="" class="filterCheckbox" labelPosition="before">Location1</mat-checkbox>
+                        <mat-checkbox id="2" onclick="onChange($event)" [checked]="" class="filterCheckbox" labelPosition="before">Location2</mat-checkbox>
+                        <mat-checkbox id="3" onclick="onChange($event)" [checked]="" class="filterCheckbox" labelPosition="before">Location3</mat-checkbox>
+                        <mat-checkbox id="4" onclick="onChange($event)" [checked]="" class="filterCheckbox" labelPosition="before">Location4</mat-checkbox>
+                        <mat-checkbox id="5" onclick="onChange($event)" [checked]="" class="filterCheckbox" labelPosition="before">Location5</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location6</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location7</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location8</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location9</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location10</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location11</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location12</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location13</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location14</mat-checkbox>
+                        <mat-checkbox class="filterCheckbox" labelPosition="before">Location15</mat-checkbox>
+                    </div>
                 </mat-expansion-panel>
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         <mat-panel-title>Hours</mat-panel-title>
                     </mat-expansion-panel-header>
+                    <input matInput placeholder="Number of hours per 2 weeks">
                 </mat-expansion-panel>
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         <mat-panel-title>Tenure</mat-panel-title>
                     </mat-expansion-panel-header>
+                    <input matInput placeholder="Duration of work?">
                 </mat-expansion-panel>
 
             </mat-expansion-panel>

@@ -1,3 +1,4 @@
+import { D } from '@angular/cdk/keycodes';
 import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -44,17 +45,16 @@ import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
     MatRadioButton,
     CommonModule,
     RouterLink,
-    RouterModule
+    RouterModule,
   ],
-  providers: [ Ng2SearchPipeModule, Ng2SearchPipe ],
+  providers: [Ng2SearchPipeModule, Ng2SearchPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   listings = oListings;
 
-  filterList(filter: string): void
-  {
+  filterList(filter: string): void {
     this.listings = oListings.filter(
       (l) =>
         l.title.includes(filter) ||
@@ -66,7 +66,15 @@ export class HomeComponent {
     );
   }
 
-  clearList(): void{
+  checkboxes = [];
+
+  onChange($event: any) {
+    this.listings = this.listings.filter(
+      (l) => l.location == $event.target.value
+    );
+  }
+
+  clearList(): void {
     this.listings = oListings;
   }
 }

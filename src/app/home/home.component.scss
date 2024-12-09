@@ -63,6 +63,7 @@
             .filters {
                 display: flex;
                 flex-direction: column;
+                overflow-y: scroll;
                 
                 ::ng-deep .mat-expansion-panel-body {
                     display: flex;
@@ -74,6 +75,12 @@
                 ::ng-deep .mat-internal-form-field {
                     display: flex;
                     margin-left: auto;
+                }
+
+                .locationPanel {
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: scroll;
                 }
             }
         }
